@@ -104,6 +104,7 @@ export default function LandingPage() {
                alt="AI Analysis"
                width={400}
                height={300}
+               style={{ width: "auto", height: "auto" }}
                className="absolute -right-10 -bottom-10 rounded-tl-3xl shadow-2xl transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2 opacity-90 grayscale group-hover:grayscale-0"
             />
           </div>
