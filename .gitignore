@@ -36,7 +36,6 @@ next-env.d.ts
 # Data files (local JSON DB)
 data/db/*.json
 
-# Large media files (exceed GitHub 100MB limit)
-public/videos/*.mp4
-*.mp4
+# Large media files (only exclude files > 100MB)
+# public/videos/*.mp4 is now included (sample video is < 100MB)
 
