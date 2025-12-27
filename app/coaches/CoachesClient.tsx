@@ -85,6 +85,7 @@ export function CoachesClient({ coaches, submissionId }: Props) {
                 src={imageByCoachId.get(c.id) ?? COACH_IMAGES[0]}
                 alt={c.displayName}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform hover:scale-105 duration-500"
               />
               <div className="absolute top-3 right-3">

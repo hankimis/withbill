@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Stethoscope, Sparkles, Trophy, Activity, CheckCircle2, PlayCircle, BarChart3, Users, Zap } from "lucide-react";
+import { ArrowRight, Stethoscope, Sparkles, Trophy, Activity, CheckCircle2, BarChart3, Users, Zap } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -217,6 +217,7 @@ export default function LandingPage() {
                         src="https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=256&auto=format&fit=crop"
                         alt="정인철 대표"
                         fill
+                        sizes="80px"
                         className="object-cover"
                       />
                    </div>
