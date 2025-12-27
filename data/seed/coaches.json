@@ -1,0 +1,105 @@
+{
+  "coaches": [
+    {
+      "id": "coach_kpop_01",
+      "displayName": "JAN K-POP 퍼포먼스 코치",
+      "genre": "K-POP",
+      "purpose": ["오디션", "무대", "디테일 교정"],
+      "certifications": ["JAN 인증", "실용무용 입시 시스템"],
+      "headline": "각도/라인, 동작 연결, 표정까지 ‘무대형’으로 다듬습니다.",
+      "tags": ["각도", "라인", "표정", "동작 연결"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    },
+    {
+      "id": "coach_hiphop_01",
+      "displayName": "JAN 힙합 그루브 코치",
+      "genre": "HIPHOP",
+      "purpose": ["기초", "그루브", "바운스"],
+      "certifications": ["JAN 인증"],
+      "headline": "타이밍/그루브를 ‘몸’에 붙이는 교정 루틴 중심.",
+      "tags": ["타이밍", "그루브", "바운스"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    },
+    {
+      "id": "coach_waacking_01",
+      "displayName": "JAN 와킹/팔 라인 코치",
+      "genre": "WAACKING",
+      "purpose": ["라인", "스피드", "각도"],
+      "certifications": ["JAN 인증"],
+      "headline": "팔 각도/스피드/에너지 분배를 단계별로 처방합니다.",
+      "tags": ["각도", "스피드", "에너지"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    },
+    {
+      "id": "coach_contemp_01",
+      "displayName": "JAN 컨템포러리 표현 코치",
+      "genre": "CONTEMP",
+      "purpose": ["표현", "호흡", "동선"],
+      "certifications": ["JAN 인증"],
+      "headline": "호흡-무게중심-동선으로 ‘표현’이 보이게 만듭니다.",
+      "tags": ["표현", "호흡", "무게중심"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    },
+    {
+      "id": "coach_exam_01",
+      "displayName": "JAN 실용무용 입시 코치",
+      "genre": "ENTRANCE",
+      "purpose": ["입시", "평가항목", "루틴"],
+      "certifications": ["실용무용 입시 시스템", "JAN 인증"],
+      "headline": "평가 항목 기준으로 ‘감점 요소’를 먼저 제거합니다.",
+      "tags": ["입시", "감점 제거", "루틴"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    },
+    {
+      "id": "coach_stage_01",
+      "displayName": "JAN 무대/에너지 코치",
+      "genre": "STAGE",
+      "purpose": ["에너지", "카메라", "무대"],
+      "certifications": ["JAN 인증"],
+      "headline": "에너지/카메라 각도/시선 처리로 무대 존재감을 만듭니다.",
+      "tags": ["에너지", "카메라", "시선"],
+      "baseProduct": "일반 코치 피드백",
+      "priceCoachFeedbackKRW": 50000
+    }
+  ],
+  "products": {
+    "coachFeedback": {
+      "id": "prod_coach_feedback",
+      "name": "일반 코치 피드백",
+      "priceKRW": 50000
+    },
+    "masterReviewUpgrade": {
+      "id": "prod_master_review_upgrade",
+      "name": "마스터 검수 포함(업그레이드)",
+      "priceKRW": 80000
+    },
+    "tiers": [
+      {
+        "id": "tier_basic",
+        "name": "Basic",
+        "includes": ["텍스트", "음성"]
+      },
+      {
+        "id": "tier_premium",
+        "name": "Premium",
+        "includes": ["피드백 영상"]
+      },
+      {
+        "id": "tier_vip",
+        "name": "VIP",
+        "includes": ["줌(라이브)"]
+      }
+    ]
+  },
+  "revenueShareExample": {
+    "academy": 0.4,
+    "instructor": 0.6
+  }
+}
+
+
