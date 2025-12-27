@@ -17,6 +17,7 @@ export default function LandingPage() {
             src="/images/hero-bg.jpg"
             alt="Hero Background"
             fill
+            sizes="100vw"
             className="object-cover opacity-60"
             priority
           />
@@ -172,7 +173,9 @@ export default function LandingPage() {
                       src="/images/demo-coaching.jpg"
                       alt="코칭 데모 이미지"
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">
