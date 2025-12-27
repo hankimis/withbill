@@ -158,32 +158,37 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CEO & Video Section */}
+      {/* CEO & Demo Image Section */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5" />
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
              
-             {/* Left: Video */}
+             {/* Left: Demo Image */}
              <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
                 <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video shadow-2xl">
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      preload="metadata"
-                      src="/videos/KakaoTalk_20251228_021538933.mp4"
+                    <Image
+                      src="/images/demo-coaching.jpg"
+                      alt="코칭 데모 이미지"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">
-                       <Badge className="bg-red-600 hover:bg-red-700 border-none text-white animate-pulse">LIVE Coaching</Badge>
+                       <Badge className="bg-blue-600 hover:bg-blue-700 border-none text-white">Demo</Badge>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                       <div className="font-semibold text-lg">코칭 데모</div>
+                       <div className="text-sm opacity-80">실제 코칭 세션 예시</div>
                     </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between text-sm text-slate-400">
                    <div className="flex items-center gap-2">
-                      <PlayCircle className="h-4 w-4" />
-                      <span>Actual Coaching Session</span>
+                      <Activity className="h-4 w-4" />
+                      <span>Coaching Demo Image</span>
                    </div>
-                   <span className="font-mono text-xs opacity-50">src: public/videos/KakaoTalk...mp4</span>
+                   <span className="font-mono text-xs opacity-50">src: public/images/demo-coaching.jpg</span>
                 </div>
              </div>
 
