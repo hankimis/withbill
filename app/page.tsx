@@ -1,275 +1,207 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Stethoscope, Sparkles, Trophy, Activity, CheckCircle2, BarChart3, Users, Zap } from "lucide-react";
+import { ArrowRight, Check, Activity, BarChart3, Users, Zap, Layers } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50/50 dark:bg-slate-950/50">
-      {/* Immersive Hero Section */}
-      <section className="relative overflow-hidden w-full min-h-[90vh] flex items-center justify-center bg-black">
-        {/* Background Visual */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-bg.jpg"
-            alt="Hero Background"
-            fill
-            sizes="100vw"
-            className="object-cover opacity-60"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+    <div className="flex flex-col min-h-screen bg-white dark:bg-black text-slate-900 dark:text-slate-50">
+      
+      {/* 1. Hero Section: Minimal & Impactful */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-medium text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+              <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
+              Tech-Enabled Dance Training
+            </div>
+            
+            <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl text-slate-900 dark:text-white leading-[1.1]">
+              기술로 진단하고<br />
+              <span className="text-slate-400 dark:text-slate-500">예술로 완성하다.</span>
+            </h1>
+            
+            <p className="max-w-2xl mx-auto text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+              Withbill은 데이터 기반 분석과 마스터의 정밀 코칭을 결합한<br className="hidden sm:inline" />
+              차세대 댄스 트레이닝 플랫폼입니다.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <Button asChild size="lg" className="h-14 px-10 text-lg rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-slate-200 transition-all">
+                <Link href="/diagnose">
+                  무료 진단 시작하기 <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="h-14 px-10 text-lg rounded-full border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900 transition-all">
+                <Link href="/coaches">
+                  코치 마켓 보기
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
 
-        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-white/10">
-            <Sparkles className="mr-2 h-3.5 w-3.5 text-yellow-400" />
-            <span className="opacity-90">AI Freemium + Human Premium</span>
-          </div>
+        {/* Hero Background Elements (Minimal) */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10 pointer-events-none opacity-50">
+           <div className="absolute top-1/4 left-10 w-72 h-72 bg-slate-200/50 rounded-full blur-3xl mix-blend-multiply filter dark:bg-slate-800/30"></div>
+           <div className="absolute top-1/3 right-10 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl mix-blend-multiply filter dark:bg-blue-900/20"></div>
+        </div>
+      </section>
 
-          <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl">
-            내 춤의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">문제를 진단</span>하고<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">처방까지 확실하게</span>
-          </h1>
-
-          <p className="max-w-2xl text-lg text-slate-300 md:text-xl font-light leading-relaxed">
-            "댄스 병원" 컨셉의 정밀 AI 분석으로 시작해,<br className="hidden sm:inline" /> 
-            SM/YG 트레이너 출신 마스터의 1:1 코칭으로 완성하세요.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
-            <Button asChild size="lg" className="h-14 px-8 text-lg rounded-full bg-white text-black hover:bg-slate-200 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] transition-transform hover:scale-105">
-              <Link href="/diagnose">
-                무료 AI 진단 시작하기 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-white/20 bg-white/5 text-white backdrop-blur-sm hover:bg-white/10 hover:text-white transition-transform hover:scale-105">
-              <Link href="/coaches">
-                <Users className="mr-2 h-5 w-5" />
-                코치 마켓 둘러보기
-              </Link>
-            </Button>
-          </div>
-
-          {/* Social Proof Strip */}
-          <div className="mt-12 w-full max-w-4xl rounded-2xl bg-white/80 backdrop-blur-md p-6 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { label: "세계 챔피언 노하우", icon: Trophy },
-                { label: "실용무용 입시 시스템", icon: CheckCircle2 },
-                { label: "SM/YG 트레이너", icon: StarIcon },
-                { label: "3분내 진단 리포트", icon: Zap },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center gap-2 text-slate-900">
-                  <item.icon className="h-6 w-6 text-black" />
-                  <span className="text-sm font-bold">{item.label}</span>
-                </div>
-              ))}
+      {/* 2. Value Proposition (Grid) */}
+      <section className="container py-24 border-t border-slate-100 dark:border-slate-900">
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+          <div className="space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+              <BarChart3 className="h-6 w-6 text-slate-700 dark:text-slate-300" />
             </div>
+            <h3 className="text-xl font-bold">정밀 데이터 분석</h3>
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+              모호한 감이 아닌, Timing, Accuracy, Angle, Energy 4대 지표를 수치화하여 객관적인 실력을 진단합니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+              <Layers className="h-6 w-6 text-slate-700 dark:text-slate-300" />
+            </div>
+            <h3 className="text-xl font-bold">체계적 솔루션</h3>
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+              "댄스 병원" 컨셉의 진단-처방 프로세스. 문제점을 발견하고 즉시 해결할 수 있는 맞춤형 연습 루틴을 제공합니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+              <Users className="h-6 w-6 text-slate-700 dark:text-slate-300" />
+            </div>
+            <h3 className="text-xl font-bold">마스터 코칭</h3>
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+              데이터가 놓칠 수 있는 예술적 디테일은 SM/YG 트레이너 출신 마스터가 1:1로 완벽하게 다듬어드립니다.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Modern Bento Grid Features */}
-      <section className="container py-24">
-        <div className="flex flex-col items-center text-center mb-16 space-y-4">
-          <Badge variant="secondary" className="px-4 py-1.5 text-sm">Features</Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-slate-900 dark:text-slate-100">과학적 분석, 예술적 코칭</h2>
-          <p className="max-w-[800px] text-slate-600 dark:text-slate-400 md:text-lg">
-            데이터와 감각의 완벽한 조화. Withbill은 춤을 배우는 가장 스마트한 방법을 제시합니다.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-          {/* Feature 1: AI Freemium (Large) */}
-          <div className="md:col-span-2 row-span-1 rounded-3xl bg-white dark:bg-slate-900 border p-8 flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-            <div className="relative z-10 space-y-4">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
-                <BarChart3 className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">AI Freemium Analysis</h3>
-                <p className="text-slate-600 dark:text-slate-400 mt-2 max-w-md">
-                  영상 업로드 즉시 Timing, Accuracy, Angle, Energy 4대 지표를 분석합니다. 비용 부담 없이 내 춤의 객관적 점수를 확인하세요.
-                </p>
-              </div>
-            </div>
-            <div className="absolute right-0 top-10 w-[300px] h-[300px] bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
-            <Image
-               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
-               alt="AI Analysis"
-               width={400}
-               height={300}
-               style={{ width: "auto", height: "auto" }}
-               className="absolute -right-10 -bottom-10 rounded-tl-3xl shadow-2xl transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2 opacity-90 grayscale group-hover:grayscale-0"
-            />
-          </div>
-
-          {/* Feature 2: Dance Clinic */}
-          <div className="md:col-span-1 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition-all duration-300">
-             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10" />
-             <div className="relative z-10 space-y-4">
-               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
-                  <Stethoscope className="h-6 w-6" />
-               </div>
-               <h3 className="text-xl font-bold text-slate-900 dark:text-white">댄스 병원 (진단/처방)</h3>
-               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                 "골반이 안 움직여요"가 아니라 "무게중심 이동 반경이 10cm 부족합니다"라고 진단합니다. 그리고 즉시 교정 루틴을 처방합니다.
-               </p>
-             </div>
-          </div>
-
-          {/* Feature 3: Human Premium */}
-          <div className="md:col-span-1 rounded-3xl bg-slate-900 text-white p-8 flex flex-col justify-between relative overflow-hidden group hover:shadow-lg transition-all duration-300">
-             <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500" />
-             <div className="relative z-10 space-y-4">
-               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white backdrop-blur-sm">
-                  <Trophy className="h-6 w-6" />
-               </div>
-               <h3 className="text-xl font-bold">Human Premium</h3>
-               <p className="text-slate-300 text-sm leading-relaxed">
-                 AI가 못 보는 "느낌"과 "표현력". 마스터 코치가 1:1로 정밀하게 다듬어드립니다.
-               </p>
-             </div>
-             <Button variant="secondary" size="sm" className="w-fit mt-4" asChild>
-               <Link href="/coaches">코치진 보기 <ArrowRight className="ml-2 h-3 w-3" /></Link>
-             </Button>
-          </div>
-
-          {/* Feature 4: Roadmap */}
-          <div className="md:col-span-2 rounded-3xl bg-white dark:bg-slate-900 border p-8 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-             <div className="relative z-10 space-y-4 max-w-md">
-               <div className="flex items-center gap-2 text-muted-foreground font-medium">
-                  <Activity className="h-5 w-5" />
-                  <span>Scaling Mastery</span>
-               </div>
-               <h3 className="text-2xl font-bold">성장 로드맵</h3>
-               <p className="text-muted-foreground">
-                 Project AI-JANVision은 단순 피드백을 넘어, 댄서의 생애주기별 성장을 관리하는 마스터 플랫폼으로 진화합니다.
-               </p>
-             </div>
-             <div className="relative z-10">
-                <Badge variant="outline" className="text-base px-4 py-2 border-dashed bg-slate-50">Early Access</Badge>
-             </div>
-             <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] dark:bg-grid-slate-800/20 pointer-events-none" />
-          </div>
-        </div>
-      </section>
-
-      {/* CEO & Demo Image Section */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5" />
-        <div className="container relative z-10">
+      {/* 3. Demo / Showcase Section (Split) */}
+      <section className="bg-slate-50 dark:bg-slate-900 py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-             
-             {/* Left: Demo Image */}
-             <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video shadow-2xl">
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-slate-900 dark:text-white">
+                업계 표준을 만드는<br />
+                독보적인 진단 시스템.
+              </h2>
+              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                Withbill은 단순한 피드백을 넘어섭니다. 세계 챔피언의 노하우와 입시 시스템을 데이터로 구조화하여, 누구나 최상위 레벨의 트레이닝을 경험할 수 있습니다.
+              </p>
+              
+              <div className="space-y-4 pt-4">
+                {[
+                  "영상 업로드 즉시 4대 지표 분석 (Freemium)",
+                  "취약 구간 시각화 및 우선순위 도출",
+                  "마스터 코치의 1:1 정밀 피드백 연동"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center">
+                      <Check className="w-3.5 h-3.5 text-white" />
+                    </div>
+                    <span className="text-slate-700 dark:text-slate-300 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              {/* Image Frame */}
+              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-black border border-slate-200 dark:border-slate-800 p-2">
+                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                     <Image
                       src="/images/demo-coaching.jpg"
-                      alt="코칭 데모 이미지"
+                      alt="Coaching Demo Interface"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      priority
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute top-4 left-4">
-                       <Badge className="bg-blue-600 hover:bg-blue-700 border-none text-white">Demo</Badge>
+                    {/* Minimal Overlay UI Mockup */}
+                    <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20">
+                       <div className="flex justify-between items-center mb-2">
+                          <div className="text-xs font-bold uppercase text-slate-500 tracking-wider">Analysis Result</div>
+                          <Badge variant="default" className="bg-blue-600 hover:bg-blue-700">88/100</Badge>
+                       </div>
+                       <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
+                          <div className="h-full bg-blue-600 w-[88%]" />
+                       </div>
+                       <div className="flex justify-between mt-2 text-xs font-medium text-slate-700">
+                          <span>Timing</span>
+                          <span>Accuracy</span>
+                          <span>Angle</span>
+                       </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                       <div className="font-semibold text-lg">코칭 데모</div>
-                       <div className="text-sm opacity-80">실제 코칭 세션 예시</div>
-                    </div>
-                </div>
-                <div className="mt-4 flex items-center justify-between text-sm text-slate-400">
-                   <div className="flex items-center gap-2">
-                      <Activity className="h-4 w-4" />
-                      <span>Coaching Demo Image</span>
-                   </div>
-                   <span className="font-mono text-xs opacity-50">src: public/images/demo-coaching.jpg</span>
-                </div>
-             </div>
-
-             {/* Right: Profile */}
-             <div className="space-y-8">
-                <div className="space-y-4">
-                   <div className="inline-flex items-center rounded-full bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400 ring-1 ring-inset ring-blue-500/20">
-                      Master Coach
-                   </div>
-                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                      "기술로 진단하고,<br />예술로 완성합니다."
-                   </h2>
-                   <p className="text-lg text-slate-300 leading-relaxed">
-                      Withbill의 코칭은 감이 아닌 데이터에서 시작합니다.<br />
-                      하지만 데이터가 춤의 전부는 아닙니다. <br />
-                      현장 경험과 입시/오디션 기준을 더해, <span className="text-white font-semibold">"합격하는 춤"</span>을 만듭니다.
-                   </p>
-                </div>
-
-                <div className="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-blue-500/50">
-                      <Image
-                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=256&auto=format&fit=crop"
-                        alt="정인철 대표"
-                        fill
-                        sizes="80px"
-                        className="object-cover"
-                      />
-                   </div>
-                   <div>
-                      <div className="font-bold text-lg">정인철 대표 (JAN)</div>
-                      <div className="text-sm text-blue-400 font-medium">Withbill · JAN Master Insight CEO</div>
-                      <div className="text-xs text-slate-400 mt-1">
-                         SM/YG 트레이너 · 세계 챔피언 출신<br />
-                         실용무용 입시 시스템 설계자
-                      </div>
-                   </div>
-                </div>
-             </div>
-
+                 </div>
+              </div>
+              {/* Decorative Background */}
+              <div className="absolute -inset-4 -z-10 bg-gradient-to-tr from-slate-200 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-[2rem]" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 container text-center">
-         <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl font-bold sm:text-4xl">지금 바로 내 춤의 점수를 확인하세요</h2>
-            <p className="text-lg text-muted-foreground">
-               파일 업로드 한번으로 시작하는 가장 과학적인 댄스 트레이닝.<br />
-               오늘의 진단이 내일의 무대를 바꿉니다.
-            </p>
-            <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/20" asChild>
-               <Link href="/diagnose">무료로 진단받기 <ArrowRight className="ml-2 h-5 w-5" /></Link>
-            </Button>
-         </div>
+      {/* 4. Authority / Trust */}
+      <section className="container py-24">
+        <div className="rounded-3xl bg-slate-900 text-white p-10 md:p-16 relative overflow-hidden">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+             <div>
+                <Badge variant="outline" className="border-white/30 text-white mb-6">Founder & CEO</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                   "데이터는 거짓말을 하지 않지만,<br />
+                   감동은 사람만이 줄 수 있습니다."
+                </h2>
+                <div className="space-y-1 text-slate-300">
+                   <div className="font-semibold text-white text-lg">정인철 (JAN)</div>
+                   <div className="text-sm">Withbill Representative</div>
+                   <div className="text-sm opacity-70 mt-2">
+                      前 SM/YG 엔터테인먼트 트레이너<br />
+                      세계 챔피언 및 실용무용 입시 시스템 총괄
+                   </div>
+                </div>
+             </div>
+             <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5">
+                {/* Image instead of Video for clean look */}
+                <Image 
+                   src="https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=800&auto=format&fit=crop"
+                   alt="CEO Profile"
+                   fill
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                   className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                      <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1" />
+                   </div>
+                </div>
+             </div>
+          </div>
+          {/* Subtle Texture */}
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
+        </div>
+      </section>
+
+      {/* 5. Final CTA */}
+      <section className="container py-24 text-center">
+        <h2 className="text-3xl font-bold tracking-tight mb-6">
+          지금 바로, 당신의 춤을 진단하세요.
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto">
+          복잡한 절차 없이 영상 업로드만으로 시작할 수 있습니다.<br />
+          전문가 수준의 분석 리포트를 무료로 경험해보세요.
+        </p>
+        <Button asChild size="lg" className="h-14 px-12 text-lg rounded-full shadow-xl shadow-slate-200 dark:shadow-none">
+          <Link href="/diagnose">무료 진단 시작하기</Link>
+        </Button>
       </section>
 
     </div>
-  );
-}
-
-function StarIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
   );
 }
